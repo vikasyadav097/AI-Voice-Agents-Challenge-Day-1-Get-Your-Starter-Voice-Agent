@@ -26,12 +26,13 @@ Ran my first live, real-time voice conversation
 
 Pushed everything to GitHub — the entire system now runs E2E 🎉
 
-📂 Project Structure
+ ''' 📂 Project Structure
 ten-days-of-voice-agents-2025/
 ├── backend/       # Python backend with LiveKit Agents + Murf Falcon TTS
 ├── frontend/      # Next.js 15 UI for real-time voice interaction
 ├── challenges/    # Daily challenge tasks and documentation
 └── README.md
+'''
 
 🧠 Backend (Python – LiveKit Agents)
 
