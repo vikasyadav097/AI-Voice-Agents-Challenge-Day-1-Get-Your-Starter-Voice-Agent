@@ -214,4 +214,4 @@ This challenge is focused on rapid experimentation, real-time AI, and building p
 ---
 
 
-Bas bol dena ❤️
+
