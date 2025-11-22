@@ -1,217 +1,204 @@
-# AI Voice Agents Challenge - Day 1 Complete ✅
+🚀 AI Voice Agents Challenge – Day 1 Completed
 
-Welcome to my **Murf AI Voice Agents Challenge** journey!
+Welcome to my journey of building 10 AI Voice Agents in 10 Days using Murf Falcon, LiveKit Agents, Gemini, and Deepgram.
 
-## 🎯 Day 1 Task - Get Your Starter Voice Agent Running
+This repository contains the complete codebase for Day 1, where I successfully set up and ran my first real-time AI Voice Agent.
 
-**Status: ✅ Completed**
+✅ Day 1 – What I Completed
 
-### What I Accomplished:
+Installed and configured Python 3.11, Node.js, pnpm, uv
 
-✅ Set up the complete development environment (Python 3.11, Node.js, pnpm, uv)
-✅ Configured backend with Murf Falcon TTS integration
-✅ Configured frontend Next.js application
-✅ Downloaded and set up LiveKit Server
-✅ Successfully connected all services (LiveKit, Backend Agent, Frontend)
-✅ Had my first real-time voice conversation with the AI agent
-✅ Pushed code to GitHub repository
+Set up the backend (LiveKit + Murf Falcon TTS + Gemini + Deepgram)
 
-## About the Challenge
+Set up the frontend (Next.js 15 + React 19 + Tailwind)
 
-Building **10 AI Voice Agents over 10 Days** using **Murf Falcon** – the consistently fastest TTS API!
+Downloaded and configured LiveKit Server
 
-This is Day 1 of the **#MurfAIVoiceAgentsChallenge** #10DaysofAIVoiceAgents
+Connected all three layers: Backend → LiveKit → Frontend
 
-## Repository Structure
+Successfully ran my first live voice conversation
 
-This is a **monorepo** that contains both the backend and frontend for building voice agent applications. It's designed to be your starting point for each day's challenge task.
+Pushed everything to GitHub
 
-```
+Project now runs fully end-to-end 🎉
+
+📂 Repository Structure
 ten-days-of-voice-agents-2025/
-├── backend/          # LiveKit Agents backend with Murf Falcon TTS
-├── frontend/         # React/Next.js frontend for voice interaction
-├── challenges/       # Daily challenge tasks
-└── README.md         # This file
-```
+├── backend/       # Python backend with LiveKit + Murf Falcon TTS
+├── frontend/      # Next.js UI for voice interaction
+├── challenges/    # Daily challenge tasks
+└── README.md
 
-### Backend
+🧠 Backend (Python – LiveKit Agents)
 
-The backend is based on [LiveKit's agent-starter-python](https://github.com/livekit-examples/agent-starter-python) with modifications to integrate **Murf Falcon TTS** for ultra-fast, high-quality voice synthesis.
+The backend is based on LiveKit's template with Murf Falcon TTS integrated.
 
-**Features:**
+Features
 
-- Complete voice AI agent framework using LiveKit Agents
-- Murf Falcon TTS integration for fastest text-to-speech
-- LiveKit Turn Detector for contextually-aware speaker detection
-- Background voice cancellation
-- Integrated metrics and logging
-- Complete test suite with evaluation framework
-- Production-ready Dockerfile
+LiveKit Agents + Turn Detection
 
-[→ Backend Documentation](./backend/README.md)
+Murf Falcon TTS (ultra-fast text-to-speech)
 
-### Frontend
+Gemini LLM for reasoning
 
-The frontend is based on [LiveKit's agent-starter-react](https://github.com/livekit-examples/agent-starter-react), providing a modern, beautiful UI for interacting with your voice agents.
+Deepgram STT for speech recognition
 
-**Features:**
+Noise reduction, voice cancellation
 
-- Real-time voice interaction with LiveKit Agents
-- Camera video streaming support
-- Screen sharing capabilities
-- Audio visualization and level monitoring
-- Light/dark theme switching
-- Highly customizable branding and UI
+Logging, metrics, evaluation suite
 
-[→ Frontend Documentation](./frontend/README.md)
+Production-ready Dockerfile
 
-## Quick Start
+🎨 Frontend (Next.js 15 + React 19)
 
-### Prerequisites
+Built using LiveKit's starter React app.
 
-Make sure you have the following installed:
+Features
 
-- **Python 3.11 or 3.12** (Python 3.14 not yet supported by all dependencies)
-- **uv package manager**: `pip install uv`
-- **Node.js 18+** with **pnpm**: `npm install -g pnpm`
-- **LiveKit Server**: Download from [LiveKit Releases](https://github.com/livekit/livekit/releases)
+Real-time voice chat interface
 
-### Required API Keys
+Camera support
 
-- **MURF_API_KEY** - Get from [Murf.ai](https://murf.ai/api)
-- **GOOGLE_API_KEY** - Get from [Google AI Studio](https://makersuite.google.com/app/apikey)
-- **DEEPGRAM_API_KEY** - Get from [Deepgram Console](https://console.deepgram.com/)
+Screen share support
 
-### 1. Clone the Repository
+Audio visualization
 
-```bash
-git clone https://github.com/GhanshyamJha05/first_day_Task-Murf-AI-.git
-cd first_day_Task-Murf-AI-
-```
+Light/Dark mode
 
-### 2. Backend Setup
+Fully customizable UI
 
-```bash
+🚀 Quick Start Guide
+1️⃣ Prerequisites
+
+Install:
+
+Python 3.11 or 3.12
+
+uv → pip install uv
+
+Node.js 18+ + pnpm → npm install -g pnpm
+
+LiveKit Server (download from GitHub releases)
+
+🔑 Required API Keys
+
+Add these inside backend and frontend .env.local:
+
+MURF_API_KEY
+
+GOOGLE_API_KEY
+
+DEEPGRAM_API_KEY
+
+LIVEKIT_API_KEY=devkey
+
+LIVEKIT_API_SECRET=secret
+
+LIVEKIT_URL=ws://127.0.0.1:7880
+
+🛠️ Backend Setup
 cd backend
-
-# Install dependencies (use Python 3.11 or 3.12)
 uv sync --python 3.11
 
-# Create .env.local file with your API keys
-# Copy from .env.example and add:
-LIVEKIT_URL=ws://127.0.0.1:7880
-LIVEKIT_API_KEY=devkey
-LIVEKIT_API_SECRET=secret
-MURF_API_KEY=<your-murf-api-key>
-GOOGLE_API_KEY=<your-google-api-key>
-DEEPGRAM_API_KEY=<your-deepgram-api-key>
+# Create .env.local
+copy .env.example .env.local
 
-# Download required models
+# Download required model files
 uv run python src/agent.py download-files
-```
 
-For LiveKit Cloud users, you can automatically populate credentials:
-
-```bash
-lk cloud auth
-lk app env -w -d .env.local
-```
-
-### 3. Frontend Setup
-
-```bash
-cd ../frontend
-
-# Install dependencies
+🎨 Frontend Setup
+cd frontend
 pnpm install
 
-# Create .env.local file
+# Create .env.local
 LIVEKIT_API_KEY=devkey
 LIVEKIT_API_SECRET=secret
 LIVEKIT_URL=ws://127.0.0.1:7880
-```
 
-### 4. Download and Run LiveKit Server
+🛰️ Run LiveKit Server
 
-**Download LiveKit Server:**
-- Visit [LiveKit Releases](https://github.com/livekit/livekit/releases)
-- Download `livekit_X.X.X_windows_amd64.zip` (or your OS version)
-- Extract to project root
+Windows:
 
-### 5. Run the Application
-
-Run these in **3 separate terminals**:
-
-**Terminal 1 - LiveKit Server:**
-```bash
-# Windows
 .\livekit-server.exe --dev
 
-# Mac/Linux
+
+Mac/Linux:
+
 ./livekit-server --dev
-```
 
-**Terminal 2 - Backend Agent:**
-```bash
+▶️ Running the Full Application
+
+Open 3 terminals:
+
+Terminal 1 – LiveKit
+./livekit-server --dev
+
+Terminal 2 – Backend Agent
 cd backend
-# Activate virtual environment (Windows PowerShell)
-.venv\Scripts\Activate.ps1
-# Then run
-python src\agent.py dev
-```
+.venv\Scripts\Activate.ps1     # Windows
+python src/agent.py dev
 
-**Terminal 3 - Frontend:**
-```bash
+Terminal 3 – Frontend
 cd frontend
 pnpm dev
-```
 
-**Open http://localhost:3000 in your browser!** 🎉
 
-## 📅 Challenge Progress
+Open:
+👉 http://localhost:3000
 
-- **Day 1**: ✅ Get Your Starter Voice Agent Running - **COMPLETED**
-- **Day 2**: 🔜 Coming soon...
-- **Day 3**: 🔜 Coming soon...
-- **Day 4**: 🔜 Coming soon...
-- **Day 5**: 🔜 Coming soon...
-- **Day 6**: 🔜 Coming soon...
-- **Day 7**: 🔜 Coming soon...
-- **Day 8**: 🔜 Coming soon...
-- **Day 9**: 🔜 Coming soon...
-- **Day 10**: 🔜 Coming soon...
+Your agent is now live! 🎤🤖
 
-## Documentation & Resources
+📅 Challenge Timeline
 
-- [Murf Falcon TTS Documentation](https://murf.ai/api/docs/text-to-speech/streaming)
-- [LiveKit Agents Documentation](https://docs.livekit.io/agents)
-- [Original Backend Template](https://github.com/livekit-examples/agent-starter-python)
-- [Original Frontend Template](https://github.com/livekit-examples/agent-starter-react)
+Day 1 – Starter Agent Setup ✔️
 
-## 🛠️ Tech Stack
+Day 2 – Coming soon
 
-- **Backend**: Python 3.11, LiveKit Agents, Murf Falcon TTS, Google Gemini LLM, Deepgram STT
-- **Frontend**: Next.js 15, React 19, TypeScript, Tailwind CSS
-- **Real-time Communication**: LiveKit Server
-- **Package Managers**: uv (Python), pnpm (Node.js)
+Day 3 – Coming soon
 
-## 📝 Notes
+Day 4 – Coming soon
 
-- Use Python 3.11 or 3.12 (not 3.14) for compatibility
-- All three services must be running simultaneously
-- API keys are stored in `.env.local` files (not committed to Git)
-- LiveKit server binary files are excluded from Git (download when needed)
+Day 5 – Coming soon
 
-## License
+Day 6 – Coming soon
 
-This project is based on MIT-licensed templates from LiveKit and includes integration with Murf Falcon. See individual LICENSE files in backend and frontend directories for details.
+Day 7 – Coming soon
 
-## Have Fun!
+Day 8 – Coming soon
 
-Remember, the goal is to learn, experiment, and build amazing voice AI agents. Don't hesitate to be creative and push the boundaries of what's possible with Murf Falcon and LiveKit!
+Day 9 – Coming soon
 
-Good luck with the challenge!
+Day 10 – Coming soon
 
----
+📚 Useful Resources
 
-Built for the AI Voice Agents Challenge by murf.ai
+Murf Falcon TTS Docs
+
+LiveKit Agents Docs
+
+LiveKit Starter Templates
+
+Gemini API Docs
+
+Deepgram API Docs
+
+🛠️ Tech Stack
+
+Backend – Python, LiveKit Agents, Murf Falcon TTS, Deepgram STT, Gemini
+
+Frontend – Next.js 15, React 19, Tailwind
+
+Real-time – LiveKit Server
+
+Package Managers – uv, pnpm
+
+📄 License
+
+This project uses MIT-licensed components from LiveKit, with additional integration of Murf Falcon TTS and custom features added for the challenge.
+
+🎉 Final Note
+
+This project marks the beginning of my 10 Days of AI Voice Agents challenge.
+The goal is to learn, build fast, and create powerful voice-based AI systems.
+
+Stay tuned for Day 2! 🚀
