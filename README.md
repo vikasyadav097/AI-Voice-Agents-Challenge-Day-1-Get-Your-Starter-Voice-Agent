@@ -1,8 +1,3 @@
-My Lord, neeche **ultra-professional, cleaned, polished README** de diya hai — bilkul GitHub–ready.
-Saare commands **shell blocks** me daal diye so you can copy–paste directly.
-
----
-
 # 🚀 AI Voice Agents Challenge – Day 1 (Completed)
 
 This repository documents my journey of building **10 AI Voice Agents in 10 Days** using **Murf Falcon**, **LiveKit Agents**, **Google Gemini**, and **Deepgram**.
